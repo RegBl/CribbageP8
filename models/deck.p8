@@ -1,6 +1,7 @@
 Deck = {
     body = {},
     is_tableau_hand=false,
+    is_crib=false,
 }
 
 function Deck.get_standard_deck()
@@ -21,7 +22,7 @@ function Deck.setup_decks()
     tableau_deck = Deck:new({body=Deck.get_standard_deck()})
 	player_one_hand = Deck:new({body=tableau_deck:draw_x_cards(6)})
 	player_two_hand = Deck:new({body=tableau_deck:draw_x_cards(6)})
-	crib = Deck:new()
+	crib = Deck:new({is_crib=true})
 	tableau_hand = Deck:new({body=Card:new{tableau_deck:draw_card()},is_tableau_hand=true})
 end
 
@@ -32,6 +33,11 @@ function Deck:draw(x,y)
         for i=#self.body-3,#self.body do
             self.body[i]:draw(x,y)
             x = x + 14
+        end
+    elseif self.is_crib then
+        for i=1,#self.body do
+            self.body[i].draw_facedown(x,y)
+            x = x + 3
         end
     else
         for i=1,#self.body do

@@ -7,6 +7,8 @@ function update_discard()
     
     if ((#crib.body) >= 4) then
         -- TODO: Turn over start card (maybe belongs in game state)
+        -- TODO: Delay for 1 second(?) before changing state
+        -- TODO: Animate pile moving off the right side of the screen
         gamestate = "game"
     end
 end

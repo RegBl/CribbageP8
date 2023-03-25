@@ -8,11 +8,8 @@ function update_discard()
     if ((#crib.body) >= 4) then
         -- TODO: Delay for 1 second(?) before changing state
         -- TODO: Animate pile moving off the right side of the screen
-        delay_time = time()
-        if ((time() - delay_time) > 1) then
-            start_card:take_card(tableau_deck:give_card())
-            gamestate = "game"
-        end
+        start_card:take_card(tableau_deck:give_card())
+        gamestate = "game"
     end
 end
 

@@ -9,6 +9,7 @@ function update_discard()
         -- TODO: Turn over start card (maybe belongs in game state)
         -- TODO: Delay for 1 second(?) before changing state
         -- TODO: Animate pile moving off the right side of the screen
+        start_card:take_card(tableau_deck:give_card())
         gamestate = "game"
     end
 end

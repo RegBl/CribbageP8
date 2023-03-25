@@ -2,6 +2,7 @@ Deck = {
     body = {},
     is_tableau_hand=false,
     is_crib=false,
+    is_start_card=false,
 }
 
 function Deck.get_standard_deck()
@@ -18,12 +19,43 @@ function Deck.get_standard_deck()
     return deck
 end
 
-function Deck.setup_decks()
-    tableau_deck = Deck:new({body=Deck.get_standard_deck()})
-	player_one_hand = Deck:new({body=tableau_deck:draw_x_cards(6)})
-	player_two_hand = Deck:new({body=tableau_deck:draw_x_cards(6)})
-	crib = Deck:new({is_crib=true})
-	tableau_hand = Deck:new({body=Card:new{tableau_deck:draw_card()},is_tableau_hand=true})
+function Deck.setup_decks() 
+    tableau_deck = Deck:new({
+        body = Deck.get_standard_deck(),
+        is_tableau_hand=false,
+        is_crib=false,
+        is_start_card=false,
+    })
+	player_one_hand = Deck:new({
+        body = tableau_deck:give_x_cards(6),
+        is_tableau_hand=false,
+        is_crib=false,
+        is_start_card=false,
+    })
+	player_two_hand = Deck:new({
+        body = tableau_deck:give_x_cards(6),
+        is_tableau_hand=false,
+        is_crib=false,
+        is_start_card=false,
+    })
+	crib = Deck:new({
+        body = {},
+        is_tableau_hand = false,
+        is_crib = true,
+        is_start_card = false,
+    })
+	tableau_hand = Deck:new({
+        body=Card:new{tableau_deck:give_card()},
+        is_tableau_hand = true,
+        is_crib = false,
+        is_start_card = false,
+    })
+    start_card = Deck:new({
+        body = {},
+        is_tableau_hand = false,
+        is_crib = false,
+        is_start_card = true,
+    })
 end
 
 function Deck:draw(x,y)
@@ -39,6 +71,10 @@ function Deck:draw(x,y)
             self.body[i].draw_facedown(x,y)
             x = x + 3
         end
+    elseif self.is_start_card then
+        for i=1,#self.body do
+            self.body[i]:draw(x,y)
+        end
     else
         for i=1,#self.body do
             self.body[i]:draw(x,y)
@@ -47,21 +83,21 @@ function Deck:draw(x,y)
     end
 end
 
-function Deck:draw_x_cards(x)
+function Deck:give_x_cards(x)
 	local hand = {}
 	for i=1,x do
-		add(hand,self:draw_card())
+		add(hand,self:give_card())
 	end
 	return hand
 end
 
-function Deck:draw_card()
+function Deck:give_card()
 	local card = rnd(self.body)
 	del(self.body,card)
 	return card
 end
 
-function Deck:draw_selected_card()
+function Deck:give_selected_card()
     local index = self:get_index_of_selected()
     if index then
         local card = self.body[index]
@@ -81,7 +117,7 @@ function Deck:get_index_of_selected()
     return false
 end
 
-function Deck:pickup_card(card)
+function Deck:take_card(card)
     add(self.body, card)
 end
 

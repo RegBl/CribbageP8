@@ -13,6 +13,8 @@ function draw_game()
 	color(0)
 	tableau_hand:draw(10,50)
 	player_one.hand:draw(10,110)
+	-- print("start_card.body: "..#start_card.body,2,2,0)
+	start_card:draw(115,30)
 end
 
 function draw_board()

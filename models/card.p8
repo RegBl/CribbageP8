@@ -15,7 +15,6 @@ function Card:draw(x,y)
     if self.is_selected then bgcolor = Color.DARK_GREY else bgcolor = Color.WHITE end
     suit_color=nil
     suit_spr=nil
-    rank_is_sprite=false
     rank_spr=nil
 
     --Draw card outline
@@ -27,15 +26,6 @@ function Card:draw(x,y)
         suit_color=Color.RED
     else
         suit_color=Color.BLACK
-    end
-
-    if self.rank == 1 or
-        self.rank == 11 or
-        self.rank == 12 or
-        self.rank == 13 then
-        rank_is_sprite=true
-    else
-        rank_is_sprite=false
     end
 
     if (self.suit == "hearts") suit_spr=1

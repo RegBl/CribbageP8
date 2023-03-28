@@ -45,7 +45,7 @@ function Deck.setup_decks()
         is_start_card = false,
     })
 	tableau_hand = Deck:new({
-        body=Card:new{tableau_deck:give_card()},
+        body = {},
         is_tableau_hand = true,
         is_crib = false,
         is_start_card = false,

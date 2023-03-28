@@ -47,7 +47,7 @@
     * Graphics
         * Game gamestate
             * Pegging
-                * [ ] List running total?
+                * [x] List running total?
                 * [ ] Start card rank = Jack, 2 points "two for his heels"
                 * [ ] Ace = 1 point
                 * [ ] 2-9 = face value points
@@ -56,6 +56,9 @@
                 * [ ] Exactly 31 = 2 points "thirty-one for two"
                 * [ ] If neither can reach 31, last to play gets 1 point "one for the go" "one for last"
                 * [ ] If current player can't play without going over 31 and the other can, the other player plays
+                * [ ] Reaching 15 exactly = 2 points "15 two"
+                * [ ] When 2 to 4 cards of the same rank are played in a round, the player playing the most recent card scores the same number of points as cards in the group: pair = 2 points, triplet = 3 points, quadrouplet = 4 points
+                * [ ] Runs in a single round starting with 3 cards score a point per card, a run of 3 scores 3 points, if the next player continues the run, they score 4 points, and so on.
         * Scoring gamestate
 
 ## Done

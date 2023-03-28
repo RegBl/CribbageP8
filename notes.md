@@ -6,8 +6,13 @@
 ## Todo
 
 * [ ] Opponent AI
+    * [ ] Weighted choices?
+        * [ ] Point values for certain choices, add together, highest total = final action
+        * [ ] Introduce some randomness/"forgetfulness"
     * [ ] Choose card for crib
     * [ ] What card to play
+        * [ ] During pegging
+            * [ ] Keep lower cards until end of round unless it makes more sense to play them immediately
 * Graphics
     * [ ] Draw stock deck
     * [ ] Rounded card corners
@@ -33,6 +38,21 @@
         * [ ] Manual vs. automatic
 * [x] AI play card after player
     * [x] Random
+    * Strategy
+* Scoring
+    * Graphics
+        * Game gamestate
+            * Pegging
+                * [ ] List running total?
+                * [ ] Start card rank = Jack, 2 points "two for his heels"
+                * [ ] Ace = 1 point
+                * [ ] 2-9 = face value points
+                * [ ] 10, Jack, Queen, King = 10 points
+                * [ ] Running total from 1 to 31 then resets
+                * [ ] Exactly 31 = 2 points "thirty-one for two"
+                * [ ] If neither can reach 31, last to play gets 1 point "one for the go" "one for last"
+                * [ ] If current player can't play without going over 31 and the other can, the other player plays
+        * Scoring gamestate
 
 ## Done
 

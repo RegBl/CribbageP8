@@ -2,11 +2,12 @@ Player = {
     name = '',
     score = 0,
     hand = {},
+    color = Color.WHITE,
 }
 
 function Player.setup_players()
-    player_one = Player:new({name="player_one",hand=player_one_hand})
-	player_two = Player:new({name="player_two",hand=player_two_hand})
+    player_one = Player:new({name="player_one",hand=player_one_hand,color = Color.RED})
+	player_two = Player:new({name="player_two",hand=player_two_hand,color = Color.BLUE})
 
 	rnd(player_one.hand.body):toggle_selected()
 

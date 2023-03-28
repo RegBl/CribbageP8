@@ -10,6 +10,7 @@ end
 function draw_game()
     cls(Color.LIGHT_GREY)
 	Pegboard.draw()
+	Pegboard.draw_scores()
 	color(0)
 	tableau_hand:draw(10,50)
 	player_one.hand:draw(10,110)

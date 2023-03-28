@@ -22,6 +22,10 @@
     * [ ] See opponent's hand?
     * [ ] Card drop shadow?
     * [x] Display face cards by letter, not number
+    * [ ] Peg Board
+        * [ ] Make 120 holes instead of current 135
+            * [ ] Take from left side
+            * [ ] Replace with printed score
 * Refactor decks
     * [ ] Crib
     * [ ] Player Hand

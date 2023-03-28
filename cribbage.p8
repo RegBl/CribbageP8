@@ -6,6 +6,7 @@ __lua__
 #include models/card.p8
 #include models/deck.p8
 #include models/player.p8
+#include models/pegboard.p8
 #include util/color.p8
 #include util/utils.p8
 #include gamestate/discard.p8

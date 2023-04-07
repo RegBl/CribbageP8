@@ -2,12 +2,13 @@ pico-8 cartridge // http://www.pico-8.com
 version 39
 __lua__
 --main
+#include util/color.p8
+#include util/utils.p8
 #include main.p8
 #include models/card.p8
 #include models/deck.p8
 #include models/player.p8
-#include util/color.p8
-#include util/utils.p8
+#include models/pegboard.p8
 #include gamestate/discard.p8
 #include gamestate/game.p8
 #include gamestate/title.p8

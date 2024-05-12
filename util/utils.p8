@@ -35,7 +35,7 @@ end
 function update_game_btns()
 	if btnp(5) and player_one.hand:get_index_of_selected() and (not player_one_has_played) then
 		p1_selected_card = player_one.hand:give_selected_card()
-		player_one.score = player_one.score + p1_selected_card.rank
+		player_one.score = player_one.score + p1_selected_card:get_value()
 		tableau_hand:take_card(p1_selected_card)
 		play_rnd_card_snd()
 		player_one_has_played = true
@@ -43,7 +43,7 @@ function update_game_btns()
 	end
 	if (time() - delay_start == 1) and player_one_has_played then
 		p2_selected_card = player_two.hand:give_card()
-		player_two.score = player_two.score + p2_selected_card.rank
+		player_two.score = player_two.score + p2_selected_card:get_value()
 		tableau_hand:take_card(p2_selected_card)
 		play_rnd_card_snd()
 		player_one_has_played = false

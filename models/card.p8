@@ -11,6 +11,14 @@ function Card.draw_facedown(x,y)
     rect(x-3,y-3,x+30,y+40,0)
 end
 
+function Card:get_value()
+    if self.rank < 10 then
+        return self.rank
+    else
+        return 10
+    end
+end
+
 function Card:draw(x,y)
     if self.is_selected then bgcolor = Color.DARK_GREY else bgcolor = Color.WHITE end
     suit_color=nil

@@ -37,3 +37,6 @@ function Player:new(o)
     self.__index = self
     return o
 end
+
+-- TODO: add 'brain' to player object
+-- TODO: figure out 'brain' parameters, e.g. player vs ai

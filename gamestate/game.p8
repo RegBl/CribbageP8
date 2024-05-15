@@ -5,6 +5,10 @@ function update_game()
     update_gamestate_btns()
 	update_game_btns()
 	-- TODO: add gamestate change here
+	-- TODO: add 31_count score
+	-- TODO: * place in lower right of screen
+	-- TODO: * where to display "go" message, center of screen overlay/modal?
+	-- TODO: add pegging rules
 end
 
 function draw_game()

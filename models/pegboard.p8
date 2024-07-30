@@ -22,4 +22,11 @@ function Pegboard.draw_scores()
 end
 
 function Pegboard.draw_peg(player)
+	-- TODO: calculate peg position based on player score
+	-- 2 players: red and blue
+	-- 40 holes per row, 3 rows per player, 6 rows altogether
+	-- score / 40 = row
+	-- score % 40 = hole
+	-- red and blue player have same x position
+	-- blue player y position is red player y position + 3
 end

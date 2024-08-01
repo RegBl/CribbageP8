@@ -7,6 +7,7 @@ function _init()
 	messages={}
 	dev_mode={}
 
+	-- TODO: add 'messages' gamestate
 	gamestates = {
 		"title",
 		"discard",

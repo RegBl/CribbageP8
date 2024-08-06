@@ -19,6 +19,10 @@ function Card:get_value()
     end
 end
 
+function Card:print_value()
+    return self.rank..sub(self.suit,1,1)
+end
+
 function Card:draw(x,y)
     if self.is_selected then bgcolor = Color.DARK_GREY else bgcolor = Color.WHITE end
     suit_color=nil

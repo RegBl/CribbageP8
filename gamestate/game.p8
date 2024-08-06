@@ -20,4 +20,5 @@ function draw_game()
 	player_one.hand:draw(10,110)
 	-- print("start_card.body: "..#start_card.body,2,2,0)
 	start_card:draw(115,30)
+	print(player_two.hand:print_deck(),1,1,Color.BLACK)
 end

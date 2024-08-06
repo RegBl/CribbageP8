@@ -91,6 +91,19 @@ function Deck:give_x_cards(x)
 	return hand
 end
 
+function Deck:ai_give_card()
+    if tableau_score < 15 then
+        for card in all(self.body) do
+            if (tableau_score + card:get_value()) == 15 then
+                return card
+            end
+        end
+        self:give_card()
+    else
+        self:give_card()
+    end
+end
+
 function Deck:give_card()
 	local card = rnd(self.body)
 	del(self.body,card)
@@ -149,6 +162,14 @@ function Deck:select_next()
     else
         self.body[#self.body].is_selected = true
     end
+end
+
+function Deck:print_deck()
+    local deck_as_text = "deck:"
+    for card in all(self.body) do
+        deck_as_text = deck_as_text..card:print_value()..","
+    end
+    return deck_as_text
 end
 
 function Deck:new(o)

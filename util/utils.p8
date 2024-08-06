@@ -44,7 +44,7 @@ function update_game_btns()
 		end
 	end
 	if (time() - delay_start == 1) and player_one_has_played then
-		p2_selected_card = player_two.hand:give_card()
+		p2_selected_card = player_two:give_card()
 		if (handle_tableau_score(player_two, p2_selected_card:get_value())) then
 			player_two.score = player_two.score + p2_selected_card:get_value()
 			tableau_hand:take_card(p2_selected_card)

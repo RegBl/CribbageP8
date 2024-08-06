@@ -98,9 +98,9 @@ function Deck:ai_give_card()
                 return card
             end
         end
-        self:give_card()
+        return self:give_card()
     else
-        self:give_card()
+        return self:give_card()
     end
 end
 

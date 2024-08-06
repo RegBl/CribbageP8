@@ -34,9 +34,9 @@ end
 
 function Player:give_card()
     if self.is_ai == true then
-        self.hand:ai_give_card()
+        return self.hand:ai_give_card()
     else
-        self.hand:give_card()
+        return self.hand:give_card()
     end
 end
 

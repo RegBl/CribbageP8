@@ -22,6 +22,7 @@ function Pegboard.draw_scores()
 end
 
 function Pegboard.draw_peg(player)
+	-- TODO: move dev_mode and calculations to an update function
 	-- TODO: calculate peg position based on player score
 	-- 2 players: red and blue
 	-- 40 holes per row, 3 rows per player, 6 rows altogether
@@ -29,6 +30,8 @@ function Pegboard.draw_peg(player)
 	-- score % 40 = hole
 	-- red and blue player have same x position
 	-- blue player y position is red player y position + 3
-	p1score_x = 23 + (player_one.score / 40)
-	p1score_y = 6 + (flr(player_one.score / 40) * 6)
+	pscore_x = 23 + (((player.score - 1) % 5) * 2) + (((player.score - 1) % 8) * 12)
+	pscore_y = 5 + (flr(player.score / 40) * 6)
+	pset(pscore_x, pscore_y, Color.WHITE)
+	-- add(dev_mode, "pscore_x: "..pscore_x..", pscore_y: "..pscore_y)
 end

@@ -29,6 +29,6 @@ function Pegboard.draw_peg(player)
 	-- score % 40 = hole
 	-- red and blue player have same x position
 	-- blue player y position is red player y position + 3
-	p1score_x = 
-	p1score_y = flr(player_one.score / 40) * 6 + 6
+	p1score_x = 23 + (player_one.score / 40)
+	p1score_y = 6 + (flr(player_one.score / 40) * 6)
 end

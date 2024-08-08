@@ -1,3 +1,4 @@
 /.vscode
 /rulebook_2020.pdf
 /.lsp
+.lsp/.cache/db.transit.json

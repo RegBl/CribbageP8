@@ -3,6 +3,7 @@ function _init()
 	player_one_has_played=false
 	gamestate="title"
 	tableau_score=0
+	is_dev_mode=false
 
 	messages={}
 	dev_mode={}
@@ -49,7 +50,7 @@ function _draw()
 	else
 		display_alerts()
 	end
-	if #dev_mode>0 then
+	if #dev_mode>0 and is_dev_mode then
 		rectfill(0,0,127,(7*#dev_mode) + 1,Color.BLACK)
 
 		for x=1,#dev_mode do

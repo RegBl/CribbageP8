@@ -27,7 +27,7 @@ function Pegboard.draw_scores()
 end
 
 function Pegboard.update_peg()
-	p1p_x = 23 + (((player_one.score - 1) % 5) * 2) + (((player_one.score - 1) % 8) * 12)
+	p1p_x = 23 + (flr(player_one.score / 5) * 2) + (flr(player_one.score / 8) * 12)
 	p1p_y = 5 + (flr(player_one.score / 40) * 6)
 	p2p_x = 23 + (((player_two.score - 1) % 5) * 2) + (((player_two.score - 1) % 8) * 12)
 	p2p_y = 8 + (flr(player_two.score / 40) * 6)
@@ -35,7 +35,6 @@ function Pegboard.update_peg()
 end
 
 function Pegboard.draw_peg()
-	-- TODO: move dev_mode and calculations to an update function
 	-- TODO: calculate peg position based on player score
 	-- 2 players: red and blue
 	-- 40 holes per row, 3 rows per player, 6 rows altogether

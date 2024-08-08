@@ -1,4 +1,9 @@
-Pegboard = {}
+Pegboard = {
+	p1p_x = 0,
+	p1p_y = 0,
+	p2p_x = 0,
+	p2p_y = 0
+}
 
 function Pegboard.draw()
 	rectfill(18,1,120,24,Color.BROWN)
@@ -21,7 +26,15 @@ function Pegboard.draw_scores()
     print(player_two.score, 4, 17, Color.BLACK)
 end
 
-function Pegboard.draw_peg(player)
+function Pegboard.update_peg()
+	p1p_x = 23 + (((player_one.score - 1) % 5) * 2) + (((player_one.score - 1) % 8) * 12)
+	p1p_y = 5 + (flr(player_one.score / 40) * 6)
+	p2p_x = 23 + (((player_two.score - 1) % 5) * 2) + (((player_two.score - 1) % 8) * 12)
+	p2p_y = 8 + (flr(player_two.score / 40) * 6)
+	add(dev_mode, "p1p x & y: "..p1p_x..", "..p1p_y.." p2p x & y: "..p2p_x..", "..p2p_y)
+end
+
+function Pegboard.draw_peg()
 	-- TODO: move dev_mode and calculations to an update function
 	-- TODO: calculate peg position based on player score
 	-- 2 players: red and blue
@@ -30,8 +43,8 @@ function Pegboard.draw_peg(player)
 	-- score % 40 = hole
 	-- red and blue player have same x position
 	-- blue player y position is red player y position + 3
-	pscore_x = 23 + (((player.score - 1) % 5) * 2) + (((player.score - 1) % 8) * 12)
-	pscore_y = 5 + (flr(player.score / 40) * 6)
-	pset(pscore_x, pscore_y, Color.WHITE)
-	-- add(dev_mode, "pscore_x: "..pscore_x..", pscore_y: "..pscore_y)
+	-- player 1 hole 1 is at 23,5
+	-- player 2 hole 1 is at 23,8
+	pset(p1p_x, p1p_y, Color.WHITE)
+	pset(p2p_x, p2p_y, Color.WHITE)
 end

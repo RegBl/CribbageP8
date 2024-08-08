@@ -44,18 +44,18 @@ function _update()
 end
 
 function _draw()
+	if #messages == 0 then
+		draw()
+	else
+		display_alerts()
+	end
 	if #dev_mode>0 then
-		rectfill(0,0,127,(6*#dev_mode) + 1,Color.BLACK)
+		rectfill(0,0,127,(7*#dev_mode) + 1,Color.BLACK)
 
 		for x=1,#dev_mode do
 			print(dev_mode[x],0,0+(x-1)*8,Color.GREEN)
 		end
 		
 		dev_mode={}
-	end
-	if #messages == 0 then
-		draw()
-	else
-		display_alerts()
 	end
 end

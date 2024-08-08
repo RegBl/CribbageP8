@@ -4,6 +4,7 @@ end
 function update_game()
     update_gamestate_btns()
 	update_game_btns()
+	Pegboard.update_peg()
 	-- TODO: add gamestate change here
 	-- TODO: add 31_count score
 	-- TODO: * place in lower right of screen
@@ -15,7 +16,7 @@ function draw_game()
     cls(Color.LIGHT_GREY)
 	Pegboard.draw()
 	Pegboard.draw_scores()
-	Pegboard.draw_peg(player_one)
+	Pegboard.draw_peg()
 	color(0)
 	tableau_hand:draw(10,50)
 	player_one.hand:draw(10,110)

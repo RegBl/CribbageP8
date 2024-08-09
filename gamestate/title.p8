@@ -3,7 +3,7 @@ end
 
 function update_title()
     if btnp(5) then
-        gamestate = "discard"
+        change_gamestate("discard")
     end
 end
 

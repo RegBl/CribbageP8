@@ -7,24 +7,28 @@ function _init()
 
 	messages={}
 	dev_mode={}
+	state_history={}
 
-	-- TODO: add 'messages' gamestate
+	-- TODO: create gamestate history so we can go back to previous gamestates
 	gamestates = {
 		"title",
 		"discard",
 		"game",
+		"messages"
 	}
 
 	updates = {
 		update_title,
 		update_discard,
 		update_game,
+		update_messages
 	}
 
 	draws = {
 		draw_title,
 		draw_discard,
 		draw_game,
+		draw_messages
 	}
 
 	card_sounds={0,1}
@@ -35,10 +39,8 @@ function _init()
 end
 
 function _update()
-	if #messages == 0 then
-		if btnp(5) then
-			deli(messages)
-		end
+	if #messages != 0 then
+		gamestate="messages"
 	end
 	set_state()
 	update()

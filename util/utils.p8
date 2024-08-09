@@ -75,6 +75,11 @@ function handle_tableau_score(player, value)
 	return is_valid_play
 end
 
+function change_gamestate(state_name)
+	gamestate = state_name
+	add(state_history, state_name)
+end
+
 function display_alerts()
 	local msg_text = messages[1].msg
 	local msg_color = messages[1].color

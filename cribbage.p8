@@ -12,6 +12,7 @@ __lua__
 #include gamestate/discard.p8
 #include gamestate/game.p8
 #include gamestate/title.p8
+#include gamestate/messages.p8
 
 --✽
 --☉

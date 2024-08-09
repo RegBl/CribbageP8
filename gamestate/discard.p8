@@ -16,7 +16,7 @@ function update_discard()
     if transition_timer_started and (time() - delay_start == 1) then
         start_card:take_card(tableau_deck:give_card())
         transition_timer_started = false
-        gamestate = "game"
+        change_gamestate("game")
     end
 end
 

@@ -7,6 +7,7 @@ function set_state()
 	end
 end
 
+-- TODO: move gamestate-specific _btns() functions to their respective gamestate files?
 function update_gamestate_btns()
 	if btnp(1) then
 		player_one.hand:select_next()
@@ -18,6 +19,7 @@ function update_gamestate_btns()
 	end
 end
 
+-- TODO: move to gamestate/discard.p8?
 function update_discard_btns()
 	if btnp(5) and player_one.hand:get_index_of_selected() and (not player_one_has_played) then
 		crib:take_card(player_one.hand:give_selected_card())
@@ -32,6 +34,7 @@ function update_discard_btns()
 	end
 end
 
+-- TODO: move to gamestate/game.p8?
 function update_game_btns()
 	if btnp(5) and player_one.hand:get_index_of_selected() and (not player_one_has_played) then
 		p1_selected_card = player_one.hand:give_selected_card()
@@ -80,6 +83,8 @@ function change_gamestate(state_name)
 	add(state_history, state_name)
 end
 
+-- is this the right place for this function? I'm thinking it should probably
+-- be in the gamestate/messages.p8 file
 function display_alerts()
 	local msg_text = messages[1].msg
 	local msg_color = messages[1].color

@@ -47,11 +47,7 @@ function _update()
 end
 
 function _draw()
-	if #messages == 0 then
-		draw()
-	else
-		display_alerts()
-	end
+	draw()
 	if #dev_mode>0 and is_dev_mode then
 		rectfill(0,0,127,(7*#dev_mode) + 1,Color.BLACK)
 

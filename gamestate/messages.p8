@@ -12,13 +12,21 @@ function update_messages()
 end
 
 function draw_messages()
-    
+    display_messages_queue()
 end
 
--- TODO: separate `messages[]` specific code out
-function display_alerts()
-	local msg_text = messages[1].msg
-	local msg_color = messages[1].color
+-- TODO: add wait for user input to show next message
+function display_messages_queue()
+    if #messages>0 then
+        local msg=deli(messages,1)
+        display_alert(msg.msg, msg.color)
+    end
+end
+
+function display_alert(msg_txt, ...)
+    local args = {...}
+	local msg_text = msg_txt
+	local msg_color = args[1] or Color.BLACK
 	local num_lines = (ceil(#msg_text/29))+1
 	local total_height = num_lines*6+6
 	local top_y = 64 - (total_height/2)
